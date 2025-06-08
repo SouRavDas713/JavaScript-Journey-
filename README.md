@@ -13,4 +13,5 @@
     Topic 05 : Array Iterator <br>
 
 <b> Day 03 </b> <br>
-    
+    Topic 01 : Number System <br>
+    Topic 02 : Number Method <br>
