@@ -15,3 +15,10 @@
 <b> Day 03 </b> <br>
     Topic 01 : Number System <br>
     Topic 02 : Number Method <br>
+    Topic 03 : Math <br>
+    Topic 04 : Loops Type <br>
+    Topic 05 : Set <br>
+    Topic 06 : Map <br>
+
+<b> Day 04 </b> <br>
+    Topic 01 : Object 

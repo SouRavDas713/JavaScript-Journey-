@@ -85,5 +85,176 @@
 
     // Number.MAX_VALUE || MIN_VALUE || NaN 
 
+
+    //=================================//=========================== MATH ======================================
+
+    // Math.E        // returns Euler's number
+    // Math.PI       // returns PI
+    // Math.SQRT2    // returns the square root of 2
+    // Math.SQRT1_2  // returns the square root of 1/2
+    // Math.LN2      // returns the natural logarithm of 2
+    // Math.LN10     // returns the natural logarithm of 10
+    // Math.LOG2E    // returns base 2 logarithm of E
+    // Math.LOG10E   // returns base 10 logarithm of E
+    // Math.floor ; 
+    // Math.ceil ; 
+    // Math.round ; 
+    // Math.trunc ; // Return Int part
+    // Math.sign ; 
+    // Math.pow(2 , 4) ; 
+    // Math.sqrt ; 
+    // Math.abs() ; 
+    // Math.min(2,5,3,1) ; 
+    // Math.max(4,2,6,3,) ; 
+    // Math.random() ; // For 0 to 1 Float number
+    // Math.floor(Math.random() * 11); // 0 to 10
+    // //How About Min to Max
+    // function getRndInteger(min, max) 
+    // {
+    // return Math.floor(Math.random() * (max - min + 1) ) + min;
+    // }
+
+//=================================//=========================== Loop ======================================
+
+    //For 
+    // let text = "" ; 
+    // for (let i = 0; i < 5; i++) {
+    //  text += "The number is " + i + "\n";
+    // } console.log(text)
+
+    //for in - object
+
+    // const person = {fname:"John", lname:"Doe", age:25};
+    // let text = "";
+    // for (let x in person) {
+    // text += person[x];
+    // }  console.log(text) 
+
+    //As array 
+    // const numbers = [45, 4, 9, 16, 25];
+
+    // let txt = "";
+    // for (let x in numbers) {
+    // txt += numbers[x];
+    // }
+
+    //For Each 
+    // const numbers = [45, 4, 9, 16, 25];
+    // let txt = "";
+    // numbers.forEach(myFunction);
+    // function myFunction(value, index, array) {
+    // txt += value;
+    // }
+
+    //For of 
+    // const cars = ["BMW", "Volvo", "Mini"];
+
+    // let text = "";
+    // for (let x of cars) {
+    // text += x;
+    // }
+
+    // let language = "JavaScript";
+    // let text = "";
+    // for (let x of language) {
+    // text += x;
+    // }
+
+    //While
+
+    // const cars = ["BMW", "Volvo", "Saab", "Ford"];
+    // let i = 0;
+    // let text = "";
+    // while (cars[i]) {
+    // text += cars[i];
+    // i++;
+    // }
+
+    // Want index or key ➜ use for...in
+
+    // Want value ➜ use for...of //iterable 
+
+//=================================//=========================== SET ======================================
+    //Input Output 
+    // Create a Set
+    // const letters = new Set();
+
+    // // Create Variables
+    // const a = "a";
+    // const b = "b";
+    // const c = "c";
+
+    // Add Variables to the Set
+    // letters.add(a);
+    // letters.add(b);
+    // letters.add(c);
+
+    // for(out of letters)
+    // {
+    //     console.log(out) ; 
+    // }
+    //Method 
+    // const letters = new Set(["a","b","c"]);
+    // answer = letters.has("d");
+    //For Each 
+    // Create a Set
+    // const letters = new Set(["a","b","c"]);
+
+    // // List all entries
+    // let text = "";
+    // letters.forEach (function(value) {
+    // text += value;
+    // })
+
+
+//=================================//=========================== Map======================================
+ 
+    // Declear By array or set
+
+    // Create a Map
+    // const fruits = new Map([
+    // ["apples", 500],
+    // ["bananas", 300],
+    // ["oranges", 200]
+    // ]);
+
+    // // Create a Map
+    // const fruits = new Map();
+
+    // // Set Map Values
+    // fruits.set("apples", 500);
+    // fruits.set("bananas", 300);
+    // fruits.set("oranges", 200);
+
+    // Method 
+    // fruits.get("apples"); 
+    // fruits.size;
+    // fruits.delete("apples");
+    // fruits.clear();
+    // fruits.has("apples");
+
+    // Looping 
+    // List all entries
+    // let text = "";
+    // fruits.forEach (function(value, key) {
+    // text += key + ' = ' + value;
+    // }) 
+    // // List all entries => apples , 234
+    // let text = "";
+    // for (const x of fruits.entries()) {
+    // text += x;
+    // }
+    // List all keys => apples
+    // let text = "";
+    // for (const x of fruits.keys()) {
+    // text += x;
+    // }
+    // Sum all values => 243
+    // let total = 0;
+    // for (const x of fruits.values()) {
+    // total += x;
+    // }
+
+
 </script>
 </html>
