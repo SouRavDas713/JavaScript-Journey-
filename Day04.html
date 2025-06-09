@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /////////////////////////////// Object Defination
+    
+    // == Defination 
+    // const person = {};
+
+    // person.firstName = "John";
+    // person.lastName = "Doe";
+    // person.age = 50;
+    // person.eyeColor = "blue";
+    //
+    
+    // const person = new Object();
+
+    // person.firstName = "John";
+    // person.lastName = "Doe";
+    // person.age = 50;
+    // person.eyeColor = "blue";
+
+    //
+    // function Person(first, last, age, eye) 
+    // {
+    //     this.firstName = first;
+    //     this.lastName = last;
+    //     this.age = age;
+    //     this.eyeColor = eye;
+    // }
+    // const myFather = new Person("John", "Doe", 50, "blue");
+    // const myMother = new Person("Sally", "Rally", 48, "green");
+    // const mySister = new Person("Anna", "Rally", 18, "green");
+    // const mySelf = new Person("Johnny", "Rally", 22, "green");
+    //
+    // function Person(first, last, age, eyecolor) {
+    // this.firstName = first;
+    // this.lastName = last;
+    // this.age = age;
+    // this.eyeColor = eyecolor;
+    // }
+
+    // Person.prototype.nationality = "English"; // prototype property allows you to add new properties to object constructors:
+
+    // Create Target Object
+    // const person1 = {
+    // firstName: "John",
+    // lastName: "Doe",
+    // age: 50,
+    // eyeColor: "blue"
+    // };
+
+    // // Create Source Object
+    // const person2 = {firstName: "Anne",lastName: "Smith"};
+
+    // // Assign Source to Target
+    // Object.assign(person1, person2);
+    // console.log(person1) // {firstName: 'Anne', lastName: 'Smith', age: 50, eyeColor: 'blue'}
+
+
+    // const person = {
+    // firstName : "John",
+    // lastName : "Doe",
+    // age : 50,
+    // eyeColor : "blue"
+    // };
+
+    // let text = Object.entries(person);   || let text = Object.values(person); // Same Work
+    // console.log(text) ; // Make it array 
+    // for(let [x , y] of text)
+    // {
+    //     console.log(x , y) ; 
+    // }
+    // //output : firstName John
+    //             lastName Doe
+    //             age 50
+    //             eyeColor blue
+
+
+    // const fruits = [
+    // ["apples", 300],
+    // ["pears", 900],
+    // ["bananas", 500]
+    // ];
+
+    // const myObj = Object.fromEntries(fruits);
+    // console.log(myObj) ; // make it object 
+    // {apples: 300, pears: 900, bananas: 500}
+
+
+
+    // const person = {
+    // fname:" John",
+    // lname:" Doe",
+    // age: 25
+    // };
+    // let txt = "" ; 
+    // for (let x in person) {
+    // txt += person[x];
+    // }
+    // console.log(txt) // John Doe25
+
+
+    // Create an Object:
+    // const person = {
+    //   firstName: "John",
+    //   lastName : "Doe",
+    //   language : "EN"
+    // };
+
+    // // Add a Property
+    // Object.defineProperty(person, "year", {value:"2008"});
+
+     //
+    // const person = {
+    // name: "Alice",
+    // greet() {
+    //     console.log("Hello, my name is " + this.name);
+    // }
+    // };
+    // let x = person.greet() ; 
+    
+    //
+    // Create Object
+    // const person = {firstName:"John", lastName:"Doe"};
+
+    // // Prevent Extensions
+    // Object.preventExtensions(person);
+
+    // // This will throw an error
+    // person.nationality = "English";
+
+    //Get
+    // Create an object: 
+    // const person = {
+    // firstName: "John",
+    // lastName: "Doe",
+    // language: "en",
+    // get lang() {
+    //     return this.language;
+    // }
+    // };
+
+    // // Display data from the object using a getter:
+    // document.getElementById("demo").innerHTML = person.lang;
+
+
+    //Set
+    // const person = {
+    // firstName: "John",
+    // lastName: "Doe",
+    // language: "",
+    // set lang(lang) {
+    //     this.language = lang;
+    // }
+    // };
+
+    // // Set an object property using a setter:
+    // person.lang = "en";
+
+    // // Display data from the object:
+    // document.getElementById("demo").innerHTML = person.language;
+
+    // ***
+    //     const person = {
+    // firstName: "John",
+    // lastName: "Doe",
+    // fullName: function() {
+    //     return this.firstName + " " + this.lastName;
+    // }
+    // };
+
+    // // Display data from the object using a method:
+    // document.getElementById("demo").innerHTML = person.fullName();
+
+
+    // ***
+    //     const person = {
+    // firstName: "John",
+    // lastName: "Doe",
+    // get fullName() {
+    //     return this.firstName + " " + this.lastName;
+    // }
+    // };
+
+    // // Display data from the object using a getter:
+    // document.getElementById("demo").innerHTML = person.fullName;
+
+    // Example 1 access fullName as a function: person.fullName().
+
+    // Example 2 access fullName as a property: person.fullName.
+
+    // The second example provides a simpler syntax.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>
