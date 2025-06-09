@@ -5,28 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    body{
+        background-color : black ; 
+    }
+</style>
 <body>
     
 </body>
 <script>
     /////////////////////////////// Object Defination
     
-    // == Defination 
+    // ============================= Defination 
     // const person = {};
 
     // person.firstName = "John";
     // person.lastName = "Doe";
     // person.age = 50;
     // person.eyeColor = "blue";
-    //
+    //===================================
     
     // const person = new Object();
-
     // person.firstName = "John";
     // person.lastName = "Doe";
     // person.age = 50;
     // person.eyeColor = "blue";
-
+    //=======================================
     //
     // function Person(first, last, age, eye) 
     // {
@@ -39,16 +43,15 @@
     // const myMother = new Person("Sally", "Rally", 48, "green");
     // const mySister = new Person("Anna", "Rally", 18, "green");
     // const mySelf = new Person("Johnny", "Rally", 22, "green");
-    //
+    //===============================================================
     // function Person(first, last, age, eyecolor) {
     // this.firstName = first;
     // this.lastName = last;
     // this.age = age;
     // this.eyeColor = eyecolor;
     // }
-
     // Person.prototype.nationality = "English"; // prototype property allows you to add new properties to object constructors:
-
+    //========================================================
     // Create Target Object
     // const person1 = {
     // firstName: "John",
@@ -63,7 +66,7 @@
     // // Assign Source to Target
     // Object.assign(person1, person2);
     // console.log(person1) // {firstName: 'Anne', lastName: 'Smith', age: 50, eyeColor: 'blue'}
-
+    //==================================================================
 
     // const person = {
     // firstName : "John",
@@ -82,7 +85,7 @@
     //             lastName Doe
     //             age 50
     //             eyeColor blue
-
+    //===================================================================
 
     // const fruits = [
     // ["apples", 300],
@@ -93,7 +96,7 @@
     // const myObj = Object.fromEntries(fruits);
     // console.log(myObj) ; // make it object 
     // {apples: 300, pears: 900, bananas: 500}
-
+    //=======================================================================
 
 
     // const person = {
@@ -106,7 +109,7 @@
     // txt += person[x];
     // }
     // console.log(txt) // John Doe25
-
+    //========================================================================
 
     // Create an Object:
     // const person = {
@@ -117,7 +120,7 @@
 
     // // Add a Property
     // Object.defineProperty(person, "year", {value:"2008"});
-
+    //=================================================================================
      //
     // const person = {
     // name: "Alice",
@@ -126,7 +129,7 @@
     // }
     // };
     // let x = person.greet() ; 
-    
+    //==========================================================================================
     //
     // Create Object
     // const person = {firstName:"John", lastName:"Doe"};
@@ -136,7 +139,7 @@
 
     // // This will throw an error
     // person.nationality = "English";
-
+    //============================================================================================
     //Get
     // Create an object: 
     // const person = {
@@ -167,7 +170,7 @@
 
     // // Display data from the object:
     // document.getElementById("demo").innerHTML = person.language;
-
+    //=============================================================================
     // ***
     //     const person = {
     // firstName: "John",
@@ -198,28 +201,154 @@
     // Example 2 access fullName as a property: person.fullName.
 
     // The second example provides a simpler syntax.
+    //===================================================================================================
+    /*
+    1. Create an object called "myPet" with the following properties:
+        - name -> "Sudo"
+        - type -> "Dog"
+        - breed -> "Poodle"
+        - age -> 7
+        - friends -> ["Bit", "Byte", "Data"]
+    2. Print out "myPet" to the terminal
+    3. Add a new property: colour -> "Black"
+    4. Change "breed" to be "Beagle"
+    5. Remove "Data" from the list of friends for "myPet"
+    6. Print out "myPet" to the terminal again
+    7. Add "Chip" to the list of friends for "myPet"
+    8. Print out "myPet" to the terminal again
+*/
+    //======================================================================================================
+    //01
+    // const myPet = {
+    //     name : "Sudo" , 
+    //     type : "Dog" , 
+    //     breed : "Poodle" , 
+    //     age : 7 , 
+    //     friends : ["Bit" , "Byte" , "Data"]
+    // }
+    // console.log(myPet) ; 
+    // for(let x in myPet)
+    // {
+    //     console.log(x + " : "+ myPet[x]+"\n") ; 
+    // }
+    //============================================
+    //02
+    //myPet.color = "Black" ; 
+    // for(let x in myPet)
+    // {
+    //      console.log(x + " : "+ myPet[x]+"\n") ; 
+    // }
+    //================================================
+    //03
+    //myPet.breed = "Beagle" ; 
+    // for(let x in myPet)
+    //  {
+    //       console.log(x + " : "+ myPet[x]+"\n") ; 
+    //  }
+    //================================================
+    //04
+    // let index = 0 ; 
+    // for(let x in myPet.friends)
+    // {
+    //     if(myPet.friends[x]==="Data")
+    //     {
+    //         index = x ; 
+    //         break ; 
+    //     }
+    // }
+    // let index = myPet.friends.indexOf("Data"); // Another way 
+    // myPet.friends.splice(index , 1) ; 
+    // for(let x in myPet)
+    //  {
+    //       console.log(x + " : "+ myPet[x]+"\n") ; 
+    //  }
+    //================================================
+    //05 [ Add "Chip" to the list of friends for "myPet" ]
 
+    // myPet.friends.push("Chip") ; 
+    // for(let x in myPet)
+    //   {
+    //        console.log(x + " : "+ myPet[x]+"\n") ; 
+    //   }
+    //===================================================
+    // Delete : 
+    // delete myPet.age ; 
+    //   for(let x in myPet)
+    //   {
+    //        console.log(x + " : "+ myPet[x]+"\n") ; 
+    //   }
+    //===================================================
 
+    /*
+    1 . How do you check if the "type" property exists in myPet?
+    2 . How can you list all keys in the myPet object?
+    3 . How do you count the number of properties in myPet?
+    4 . How do you make a copy of myPet without affecting the original?
+    5 . How can you convert all string values in myPet to uppercase?
+    6 . How do you find the type of each property in myPet?
+    7 . How do you freeze myPet so no properties can be added or changed?
+    8 . How can you delete the "age" property from myPet?
+    How do you check if the "friends" array includes "Chip"?
+    How do you remove all elements from the friends array?
+    How can you reverse the order of myPet.friends?
+    How do you sort myPet.friends alphabetically?
+    How do you add a new friend "Node" at the beginning of friends?
+    How can you replace "Byte" with "RAM" in friends?
+    How do you merge myPet with another object {owner: "Alex"}?
+    */ 
 
+    // const myPet = {
+    //     name : "Sudo" , 
+    //     type : "Dog" , 
+    //     breed : "Poodle" , 
+    //     age : 7 , 
+    //     friends : ["Bit" , "Byte" , "Data"]
+    // }
+    // console.log("type" in myPet) ; // true 
+    // console.log(myPet.hasOwnProperty("type")); //true
+    //===========
+    //Object.keys(myPet) // Returns an array of property names (keys) of the object myPet.
+    //=========== 
+    //Object.keys(myPet).length
+    //============
+    //const newPet = { ...myPet };
+    //console.log(newPet);
+    //============
+    //for (let key in myPet)
+    // {
+    // if (typeof myPet[key] === "string")
+    //     {
+    //         myPet[key] = myPet[key].toUpperCase();
+    //     }
+    // }
+    //===============
+    // for (let key in myPet) 
+    // {
+    //     console.log(`${key}: ${typeof myPet[key]}`);
+    // }
+    //====================
+    // Object.freeze(myPet)
+    //====================
+    //myPet.friends.includes("Chip") // find Chip in friends 
+    //=====
+    //myPet.friends.length = 0 //  Remove all elements from friends
+    //========
+    // myPet.friends.reverse() // Reverse friends array:
+    // ==========
+    // myPet.friends.sort()
+    // myPet.friends.unshift("Node") // Add "Node" at beginning of friends:
+    // const idx = myPet.friends.indexOf("Byte"); 
+    // if (idx !== -1) myPet.friends[idx] = "RAM";  //Replace "Byte" with "RAM":
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    // Marge : 
+    //     let myPet = { name: "Sudo" };
+    // myPet = { ...myPet, owner: "Alex" };
+    // console.log(myPet);
+    // // Output: { name: "Sudo", owner: "Alex" }
+    //     const myPet = { name: "Sudo" };
+    // Object.assign(myPet, { owner: "Alex" });
+    // console.log(myPet);
+    // // Output: { name: "Sudo", owner: "Alex" }
 
 
 
