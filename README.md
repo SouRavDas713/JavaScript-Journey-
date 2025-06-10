@@ -25,4 +25,6 @@
     Topic 01 : Object <br>
     Topic 02 : Object Practice Problem <br>
     
-    
+<b> Day 05 </b> <br>
+    Topic 01 : Function <br>
+    Topic 02 : <br>

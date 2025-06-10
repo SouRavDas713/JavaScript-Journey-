@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // Simple // 
+    // TYPE - 01
+
+    // function fruitMachine(orange , apple)
+    // {
+    //     const juice = `The Juice is made of ${orange} oranges and ${apple} apples` ;
+    //     return juice ; 
+    // } 
+    // console.log(fruitMachine(6 , 10)) ; 
+
+    // // TYPE - 02
+
+    // Function as Expression 
+
+    // const fruitMachine = function(orange , apple) 
+    // {
+    //     const juice = `The Juice is made of ${orange} oranges and ${apple} apples` ;
+    //     return juice ; 
+    // }
+    // console.log(fruitMachine(6 , 10)) ;
+
+    // // TYPE - 03
+
+    // Arrow Function
+
+    // const ageCal = birthYear => 2023 - birthYear ;
+    // console.log(ageCal(2000)) ; 
+    
+    // EXAMPLE - 02
+    
+    // const retireCal = (birthYear , firstName) => {
+    //     const age = 2025 - birthYear ; 
+    //     const retirement = 65 - age ; 
+    //     // return {retirement , firstName} ; 
+    //     return `${firstName} retires in ${retirement} years` ;
+    // }
+    // console.log(retireCal(2010 , 'sd'))  ; 
+
+//========================================================
+    // Defination : 
+    // function sleep(Time)
+    // {
+    //     console.log("I slept "+ Time + " Hours") ; 
+    // }
+    // sleep(10) ; // I slept 10 Hours
+    //====== 
+    //Anonymous 
+    // const x = function (a, b) {return a * b};
+    // let z = x(4, 3);
+    //========
+    // (function () {
+    // let x = "Hello!!";  // I will invoke myself
+    // })();
+    // Arrow
+    // ES5
+    // var x = function(x, y) {
+    // return x * y;
+    // }
+
+    // // ES6
+    // const x = (x, y) => x * y;
+    //=====
+    // The rest parameter (...) allows a function to treat an indefinite number of arguments as an array:
+    // function sum(...args) 
+    // {
+    // let sum = 0;
+    // for (let arg of args) sum += arg;
+    // return sum;
+    // }
+
+    // let x = sum(4, 9, 16, 25, 29, 100, 66, 77);
+    //========
+    // x = sumAll(1, 123, 500, 115, 44, 88);
+    // function sumAll() {
+    // let sum = 0;
+    // for (let i = 0; i < arguments.length; i++) {
+    //     sum += arguments[i];
+    // }
+    // return sum;
+    // }
+    //============
+    // const person = 
+    // {
+    // fullName: function() 
+    // {
+    //     return this.firstName + " " + this.lastName;
+    // }
+    // }
+    // const person1 = {
+    // firstName:"John",
+    // lastName: "Doe"
+    // }
+
+    // // This will return "John Doe":
+    // console.log(person.fullName.call(person1)); // this => person1 => call
+    //=========
+    // const person = {
+    // fullName: function(city, country) {
+    //     return this.firstName + " " + this.lastName + "," + city + "," + country;
+    // }
+    // }
+
+    // const person1 = {
+    // firstName:"John",
+    // lastName: "Doe"
+    // }
+
+    // person.fullName.call(person1, "Oslo", "Norway");
+    //=================
+    // const person = {
+    // fullName: function(city, country) {
+    //     return this.firstName + " " + this.lastName + "," + city + "," + country;
+    // }
+    // }
+
+    // const person1 = {
+    // firstName:"John",
+    // lastName: "Doe"
+    // }
+
+    // person.fullName.apply(person1, ["Oslo", "Norway"]);
+    // The apply() method accepts arguments in an array:
+    //=====================
+    //Math.max.apply(Math, [1,2,3]);
+    //=================
+   // The member object borrows the fullname method from person:
+    // const person = {
+    // firstName:"John",
+    // lastName: "Doe",
+    // fullName: function () {
+    //     return this.firstName + " " + this.lastName;
+    // }
+    // }
+
+    // const member = {
+    // firstName:"Hege",
+    // lastName: "Nilsen",
+    // }
+
+    // let fullName = person.fullName.bind(member);
+    //=============================
+    /*
+    Variable Lifetime
+    Global variables live until the page is discarded, like when you navigate to another page or close the window.
+
+    Local variables have short lives. They are created when the function is invoked, and deleted when the function is finished.
+    */
+   // Initiate counter
+    // let counter = 0;
+
+    // // Function to increment counter
+    // function add() {
+    // counter += 1;
+    // }
+
+    // // Call add() 3 times
+    // add();
+    // add();
+    // add();
+
+    // // The counter should now be 3
+    //==============================
+    // Initiate counter
+    // let counter = 0;
+
+    // // Function to increment counter
+    // function add() {
+    // let counter = 0;
+    // counter += 1;
+    // }
+
+    // // Call add() 3 times
+    // add();
+    // add();
+    // add();
+
+    // // The counter should now be 3. But it is 0
+    //=================
+    // Function to increment counter
+    // function add() {
+    // let counter = 0;
+    // counter += 1;
+    // return counter;
+    // }
+
+    // let x= 0;
+    // // Call add() 3 times
+    // x = add();
+    // x = add();
+    // x = add();
+
+    // // The counter should now be 3. But it is 1.
+    //========================
+    // function add() {
+    // let counter = 0;
+    // function plus() {counter += 1;}
+    // plus();   
+    // return counter;
+    // }
+    // console.log(add()) ; // 1
+    // console.log(add()) ; // 1
+    //===============
+    //JavaScript Closures
+    // function myCounter() {
+    // let counter = 0;
+    // return function() {
+    //     counter++;
+    //     return counter;
+    // };
+    // }
+    // const add = myCounter();
+    // add();
+    // add();
+    // add();
+
+    // // the counter is now 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>
