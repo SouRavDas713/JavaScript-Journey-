@@ -280,15 +280,250 @@
     }
 
 // =================================== //=========================================// ==============================================
-*** Array Practice ***
+*** Array Practice ***  String Type 
 
-Create an array called colors with these elements: "red", "green", "blue", "yellow".
-Add "purple" at the end of the array.
-Remove the first color And Print 
-Insert "orange" and "pink" starting at index 2 without removing any elements.
-creat new Colors array with 3 consecutive portion 
-Sort the array alphabetically.
-Print the array after each step.
+    
+    *** Easy : 
+    Create an array called colors with these elements: "red", "green", "blue", "yellow".
+    Add "purple" at the end of the array.
+    Remove the first color And Print 
+    Insert "orange" and "pink" starting at index 2 without removing any elements.
+    creat new Colors array with 3 consecutive portion 
+    Sort the array alphabetically.
+    Print the array after each step. 
+    *** Mid : 
+    Find the index of "pink" and remove it from the array.
+    Add "violet" right after "orange".
+    Create a new array warmColors containing only colors that come before "red" alphabetically
+    *** Hard : 
+    01 Remove every color whose name length is less than 5 characters.
+    02 Find all colors whose names contain the letter "o" and move them to the front of the array in the same order they appear.
+    03 Replace the last 3 elements of the original array with the first 3 elements of another color  If specialColors has less than 3 elements, replace as many as possible.
+    
+    // ======================
+    // *** Easy : 
+    const color = ["red" , "green" , "blue" , "yellow"] ; 
+     color.push("purple") ; 
+     color.unshift("golden") ; 
+     console.log(color)
+    // (6) ['golden', 'red', 'green', 'blue', 'yellow', 'purple']
+     let first = color.shift() ; 
+     let last = color.pop() ; 
+     color.sort() ; 
+     console.log(first , last , color ) ; 
+    // golden purple => (4) (4) ['blue', 'green', 'red', 'yellow']
+    color.splice(2 , 0 , "orange" , "pink") ; 
+    console.log(color) ; 
+    // (6) ['blue', 'green', 'orange', 'pink', 'red', 'yellow']
+    const threeColor = color.slice(2,5) ; 
+    console.log(threeColor) ; 
+    // (3) ['orange', 'pink', 'red'] 
+    // ======================
+    // *** Mid : 
+    //
+    let indexofPink = color.indexOf("pink") ; 
+    color.splice(indexofPink , 1) ; 
+    console.log(color) ;  
+    // (5) ['blue', 'green', 'orange', 'red', 'yellow']
+    let indexofOrange = color.indexOf("orange") ; 
+    color.splice(indexofOrange+1 , 0 , "violet") ; 
+    console.log(color) ; 
+    // (6) ['blue', 'green', 'orange', 'violet', 'red', 'yellow']
+
+    // Many Way : 
+    const redIndex = color.indexOf("red");
+    const warmColors = color.slice(0, redIndex);
+    console.log(warmColors) ;
+    // (4) ['blue', 'green', 'orange', 'violet']
+    const warmColors = [];
+    for(let c of color) {
+    if(c < "red") warmColors.push(c);
+    }
+    console.log(warmColors) ;
+
+    // ======================
+    // *** Hard : 
+     const color = ['blue', 'green', 'orange', 'violet', 'red', 'yellow'] ; 
+    for(let x in color)
+    {
+        if(color[x].length<5)
+        {
+            color.splice(x , 1) ; 
+        }
+    }   
+    console.log(color) ; 
+    (4) ['green', 'orange', 'violet', 'yellow']
+
+    // 02 
+
+    for (let i = color.length - 1; i >= 0; i--) 
+    {
+        if (color[i].includes('o')) 
+        {
+            let del = color.splice(i, 1)[0];  // Remove and get the element as its return array
+            color.unshift(del);               // Insert at the beginning
+        }
+    }
+     console.log(color);
+     (6) ['yellow', 'violet', 'blue', 'green', 'orange', 'red']
+
+    // 03
+     const color = ['blue', 'green', 'orange', 'violet', 'red', 'yellow'] ; 
+     const specialColors = ['golden' , 'brown' , 'black'] ; 
+     color.splice(-3, 3, ...specialColors); // -3 means reverse order 3 
+     console.log(color)  ; 
+     (6) ['blue', 'green', 'orange', 'golden', 'brown', 'black']
+
+
+    // ================================================
+    *** Array Practice ***  Number Type 
+
+    *** Easy : 
+
+     Create an array with numbers 1 to 10. Print.
+     Create a new array of only even numbers using .filter(). Print.
+     Double every number using .map(). Print.
+     Reverse the array. Print.
+     Sort it in ascending and descending order. Print.
+     
+    *** Mid : 
+
+    Find the sum of the array using .reduce().
+    Find the maximum and minimum numbers.
+    Check if any number is negative using .some().
+    Check if all numbers are less than 50 using .every().
+    Find the index of number 100, and if found, remove it.
+    Slice out the middle 3 numbers into a new array.
+    Create a new array of square roots, round to 2 decimals.
+
+    *** Hard : 
+
+    Remove all duplicate numbers from an array.
+    Move all even numbers to the front, maintaining order.
+    Create an array of prefix sums.
+    Replace the last 3 numbers with the first 3 prime numbers.
+    Sort only a portion of the array (e.g., index 3 to 6).
+    Implement sliding window sum of size 3.
+    Find the longest increasing subarray.
+
+
+
+
+    // Sol : ====== *** =========
+
+    // *** Easy  : 
+
+    const arr =[] ; 
+    for(let i = 1 ; i<=10 ; i++)
+    {
+        arr.push(i) ; 
+    }
+    // console.log(arr) ;
+
+    const even = arr.filter(x => x%2 ===0 ) ; 
+    console.log(even) ; 
+    // (5) [2, 4, 6, 8, 10]
+
+    const double = arr.map(x => x*2 ) ;
+    console.log(double) ; 
+    // (10) [2, 4, 6, 8, 10, 12, 14, 16, 18, 20] 
+
+    console.log(arr.reverse()) ;  // (10) [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+    arr.sort((a , b) => a - b) ; 
+    console.log(arr) ; // (10) [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    arr.sort((a , b) =>  b - a) ; 
+    console.log(arr) ; // (10) [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+     *** Mid  : 
+
+    const arr = ['23' , '11' , '9' ,  '34' , '45' , '11' , '77'] ; 
+    let sum = arr.reduce((accumulator , current) => accumulator+current , 0) ; 
+    console.log(sum) ; // 02334451177
+    let sum = arr.reduce((accumulator , current) => accumulator+Number(current) , 0) ;
+    console.log(sum) ; // 190
+    const arr = ['23', '11', '9', '34', '45', '11', '77'].map(Number);
+
+    Max and Min
+    const max = Math.max(...arr);
+    const min = Math.min(...arr);
+    console.log("Max:", max, "Min:", min);
+
+    // Check if any number is negative
+    console.log("Any negative?", arr.some(n => n < 0));
+
+    // Check if all numbers are less than 50
+    console.log("All < 50?", arr.every(n => n < 50));
+
+    // Find index of 100 and remove if found
+    const index100 = arr.indexOf(100);
+    if (index100 !== -1) arr.splice(index100, 1);
+
+    // Slice out middle 3 numbers
+    const midStart = Math.floor((arr.length - 3) / 2);
+    const mid3 = arr.slice(midStart, midStart + 3);
+    console.log("Middle 3:", mid3);
+
+    // New array of square roots (2 decimal)
+    const roots = arr.map(n => Math.sqrt(n).toFixed(2));
+    console.log("Square roots:", roots);
+
+    // *** Hard  :
+
+    let arr = [23, 11, 9, 34, 45, 11, 77, 34, 9];
+
+    // 1. Remove duplicates
+    arr = [...new Set(arr)];
+    console.log("No Duplicates:", arr);
+
+    // 2. Move all even numbers to front, maintain order
+    const evens = arr.filter(n => n % 2 === 0);
+    const odds = arr.filter(n => n % 2 !== 0);
+    arr = [...evens, ...odds];
+    console.log("Evens First:", arr);
+
+    // 3. Prefix sums
+    const prefixSum = [];
+    arr.reduce((acc, curr, i) => prefixSum[i] = acc + curr, 0);
+    console.log("Prefix Sum:", prefixSum);
+
+    // 4. Replace last 3 with first 3 primes
+    const primes = [2, 3, 5];
+    for (let i = 0; i < primes.length && i < 3; i++) {
+        arr[arr.length - 3 + i] = primes[i];
+    }
+    console.log("Primes at End:", arr);
+
+    // 5. Sort only index 3 to 6
+    const sortedSection = arr.slice(3, 7).sort((a, b) => a - b);
+    arr.splice(3, sortedSection.length, ...sortedSection);
+    console.log("Partial Sort (3-6):", arr);
+
+    // 6. Sliding window sum of size 3
+    const windowSums = [];
+    for (let i = 0; i <= arr.length - 3; i++) {
+        windowSums.push(arr[i] + arr[i+1] + arr[i+2]);
+    }
+    console.log("Sliding Window (3):", windowSums);
+
+    // 7. Longest increasing subarray
+    let maxLen = 1, currLen = 1, start = 0, bestStart = 0;
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > arr[i - 1]) {
+            currLen++;
+            if (currLen > maxLen) {
+                maxLen = currLen;
+                bestStart = start;
+            }
+        } else {
+            currLen = 1;
+            start = i;
+        }
+    }
+    const longestInc = arr.slice(bestStart, bestStart + maxLen);
+    console.log("Longest Increasing Subarray:", longestInc);
+
+
 
 </script>
 </html>
