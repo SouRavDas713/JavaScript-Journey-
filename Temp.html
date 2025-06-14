@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Create an array called colors with these elements: "red", "green", "blue", "yellow".
+    Add "purple" at the end of the array.
+    Remove the first color And Print 
+    Insert "orange" and "pink" starting at index 2 without removing any elements.
+    creat new Colors array with 3 consecutive portion 
+    Sort the array alphabetically.
+    Print the array after each step. 
+    
+    *** Mid : 
+    Find the index of "pink" and remove it from the array.
+    Add "violet" right after "orange".
+    Create a new array warmColors containing only colors that come before "red" alphabetically
+    *** Hard : 
+    Remove every color whose name length is less than 5 characters.
+    Find all colors whose names contain the letter "o" and move them to the front of the array in the same order they appear.
+    Replace the last 3 elements of the original array with the first 3 elements of another color array [reversed sorted ]. If specialColors has less than 3 elements, replace as many as possible.
+    -->
+    
+</body>
+<script>
+
+     const color = ["red" , "green" , "blue" , "yellow"] ; 
+     color.push("purple") ; 
+     color.unshift("golden") ; 
+     console.log(color)
+    // (6) ['golden', 'red', 'green', 'blue', 'yellow', 'purple']
+     let first = color.shift() ; 
+     let last = color.pop() ; 
+     color.sort() ; 
+     console.log(first , last , color ) ; 
+    // golden purple => (4) (4) ['blue', 'green', 'red', 'yellow']
+    color.splice(2 , 0 , "orange" , "pink") ; 
+    console.log(color) ; 
+    // (6) ['blue', 'green', 'orange', 'pink', 'red', 'yellow']
+    const threeColor = color.slice(2,5) ; 
+    console.log(threeColor) ; 
+    // (3) ['orange', 'pink', 'red'] 
+    // *** ***
+    let indexofPink = color.indexOf("pink") ; 
+    color.splice(indexofPink , 1) ; 
+    console.log(color) ;  
+    // (5) ['blue', 'green', 'orange', 'red', 'yellow']
+    let indexofOrange = color.indexOf("orange") ; 
+    color.splice(indexofOrange+1 , 0 , "violet") ; 
+    console.log(color) ; 
+    // (6) ['blue', 'green', 'orange', 'violet', 'red', 'yellow']
+
+    // Many Way : 
+    const redIndex = color.indexOf("red");
+    const warmColors = color.slice(0, redIndex);
+    console.log(warmColors) ;
+    // (4) ['blue', 'green', 'orange', 'violet']
+    const warmColors = [];
+    for(let c of color) {
+    if(c < "red") warmColors.push(c);
+    }
+    console.log(warmColors) ;
+
+</script>
+</html>

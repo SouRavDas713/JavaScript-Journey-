@@ -14,245 +14,281 @@
 
     //=========== Syntext =====================//
 
-    // const arr = [ "one" , "two" , 
-    // "three" , 
-    // "four" , 
-    // ]; 
-    // console.log(arr) ; 
-    // console.log(arr.length) ; 
-    // console.log(arr.sort()) ; //['four', 'one', 'three', 'two']
+    const arr = [ "one" , "two" , 
+    "three" , 
+    "four" , 
+    ]; 
+    console.log(arr) ; 
+    console.log(arr.length) ; 
+    console.log(arr.sort()) ; //['four', 'one', 'three', 'two']
     
+    => Copy Array 
+    const newArr = [...oldArr]; // not newArr = oldArr
+
+    =>  Destructuring Arrays
+    const [a, b] = [10, 20];  // a = 10, b = 20
+
+
 
     //=========== Loop Over Array  =====================//
 
-    // const color  = [ "red" , "green" , "yellow" , "blue"] ; 
-    // let text = "Array Colors Are :\n" ; 
-    // color.push("black")
-    // for(let i = 0 ; i<color.length ; i++)
-    // {
-    //     text+= color[i] ; 
-    //     text+="\n" ; 
-    // }
-    // console.log(text) ; 
-    // // Array Colors Are :
-    // // red
-    // // green
-    // // yellow
-    // // blue
-    // // black
-    // console.log(Array.isArray(color)) ; //true 
+    const color  = [ "red" , "green" , "yellow" , "blue"] ; 
+    let text = "Array Colors Are :\n" ; 
+    color.push("black")
+    for(let i = 0 ; i<color.length ; i++)
+    {
+        text+= color[i] ; 
+        text+="\n" ; 
+    }
+    console.log(text) ; 
+    Array Colors Are :
+    red
+    green
+    yellow
+    blue
+    black
+    console.log(Array.isArray(color)) ; //true 
 
      //=========== For Each Over Array  =====================//
 
-    // const arr = ["a" , "b" , "c"] ; 
+    const arr = ["a" , "b" , "c"] ; 
 
-    // arr.forEach(output) ; 
+    arr.forEach(output) ; 
 
-    // function output(value)
-    // {
-    //     console.log(value) ; 
-    // }
+    function output(value)
+    {
+        console.log(value) ; 
+    }
 
      //=========== Nested Loop Over Array  =====================//
 
-    // const id = [
-    // ["CSE" , "BBA"] , 
-    // ["EEE" , "ELL"] , 
-    // ["Civil" , "ETE"]
-    // ] ; 
-    // for(let i = 0 ; i<id.length ; i++)
-    // {
-    //     for(let j = 0 ; j<id[i].length ; j++)
-    //     {
-    //         console.log(id[i][j]) ; 
-    //     }
-    // }
+    const id = [
+    ["CSE" , "BBA"] , 
+    ["EEE" , "ELL"] , 
+    ["Civil" , "ETE"]
+    ] ; 
+    for(let i = 0 ; i<id.length ; i++)
+    {
+        for(let j = 0 ; j<id[i].length ; j++)
+        {
+            console.log(id[i][j]) ; 
+        }
+    }
 
 //============================******============================****==========================================
 
-    //=========== Array Method  =====================//
+    =========== Array Method  =====================
 
-    //01
-    // const fruits = ["Banana", "Orange", "Apple", "Mango"];
-    // let myList = fruits.toString();
-    // console.log(myList) ; // Banana,Orange,Apple,Mango
+    01 -> tostring
 
-    //02
-    // const fruits = ["Banana", "Orange", "Apple", "Mango"];
-    // fruits.length = 2;
-    // console.log(fruits) ; //(2) ['Banana', 'Orange']
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    let myList = fruits.toString();
+    console.log(myList) ; // Banana,Orange,Apple,Mango
 
-    //03
-    // const fruits = ["Banana", "Orange", "Apple", "Mango"];
-    // let text =  fruits.join(" and ")
-    //  console.log(text) ; Banana and Orange and Apple and Mango
+    02 -> length
 
-    //04
-    // const fruits = ["Banana", "Orange", "Apple", "Mango"];
-    // fruits.pop();
-    // fruits.push("Guava") ; 
-    // console.log(fruits) ; // (4) ['Banana', 'Orange', 'Apple', 'Guava']
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    fruits.length = 2;
+    console.log(fruits) ; //(2) ['Banana', 'Orange']
 
-    //05
-    //  const fruits = ["Banana", "Orange", "Apple", "Mango"];
-    //  fruits.shift(); //Delete Fisrt Elemnt
-    //  let fruit = fruits.shift(); 
-    //  console.log(fruit) // Orange
-    //  console.log(fruits) ; // (3) ['Orange', 'Apple', 'Mango']
-    //  fruits.unshift("Banana") ; 
-    //  console.log(fruits) ; // (4) ['Banana', 'Orange', 'Apple', 'Mango']
+    03 -> join
 
-    //06
-    // const myGirls = ["Cecilie", "Lone"];
-    // const myBoys = ["Emil", "Tobias", "Linus"];
-    // const myChildren = myGirls.concat(myBoys);
-    // console.log(myChildren) ; //(5) ['Cecilie', 'Lone', 'Emil', 'Tobias', 'Linus']
- 
-    // const arr1 = ["Cecilie", "Lone"];
-    // const arr2 = ["Emil", "Tobias", "Linus"];
-    // const arr3 = ["Robin", "Morgan"];
-    // const myChildren = arr1.concat(arr2, arr3);
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    let text =  fruits.join(" and ")
+     console.log(text) ; Banana and Orange and Apple and Mango
 
-    // const myArray = ["Emil", "Tobias", "Linus"];
-    // const myChildren = myArray.concat("Peter");  // Emil,Tobias,Linus,Peter
+    04 -> POP | PUSH 
 
-    //07
-    // The splice() method adds new items to an array.
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    fruits.pop();
+    fruits.push("Guava") ; 
+    console.log(fruits) ; // (4) ['Banana', 'Orange', 'Apple', 'Guava']
 
-    // const fruits = ["Banana", "Orange", "Apple", "Mango"];
-    // fruits.splice(2, 0, "Lemon", "Kiwi");
-    // console.log(fruits); //(6) ['Banana', 'Orange', 'Lemon', 'Kiwi', 'Apple', 'Mango']
-    // //where new elements should be added // how many elements should be removed.
-    // fruits.splice(2, 1, "Lemon", "Kiwi"); 
-    // console.log(fruits); //['Banana', 'Orange', 'Lemon', 'Kiwi', 'Kiwi', 'Apple', 'Mango']
+    05 -> shift | unshift 
 
-    // const fruits = ["Banana", "Orange", "Apple", "Mango"];
-    // fruits.splice(0, 1);
-    // console.log(fruits) ; // (3) ['Orange', 'Apple', 'Mango']
+     const fruits = ["Banana", "Orange", "Apple", "Mango"];
+     fruits.shift(); // Delete Fisrt Elemnt
+     let fruit = fruits.shift(); // Return Delete Value 
+     console.log(fruit) // BANANA 
+     console.log(fruits) ; // (3) ['Orange', 'Apple', 'Mango']
+     fruits.unshift("Banana") ; 
+     console.log(fruits) ; // (4) ['Banana', 'Orange', 'Apple', 'Mango']
+
+    06 -> Concat 
+
+    const myGirls = ["Cecilie", "Lone"];
+    const myBoys = ["Emil", "Tobias", "Linus"];
+    const myChildren = myGirls.concat(myBoys);
+    console.log(myChildren) ; //(5) ['Cecilie', 'Lone', 'Emil', 'Tobias', 'Linus']
+    //===
+    const arr1 = ["Cecilie", "Lone"];
+    const arr2 = ["Emil", "Tobias", "Linus"];
+    const arr3 = ["Robin", "Morgan"];
+    const myChildren = arr1.concat(arr2, arr3);
+
+    const myArray = ["Emil", "Tobias", "Linus"];
+    const myChildren = myArray.concat("Peter");  // Emil,Tobias,Linus,Peter
+
+    07 -> splice
+    The splice() method adds new items to an array.
+
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    fruits.splice(2, 0, "Lemon", "Kiwi");
+    console.log(fruits); //(6) ['Banana', 'Orange', 'Lemon', 'Kiwi', 'Apple', 'Mango']
+    //where new elements should be added // how many elements should be removed.
+    fruits.splice(2, 1, "Lemon", "Kiwi"); 
+    console.log(fruits); //['Banana', 'Orange', 'Lemon', 'Kiwi', 'Kiwi', 'Apple', 'Mango']
+    //===
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    fruits.splice(0, 1);
+    console.log(fruits) ; // (3) ['Orange', 'Apple', 'Mango']
 
 
-    //08
-    // The slice() method slices out a piece of an array.
+    08 -> slice
+    The slice() method slices out a piece of an array.
 
-    // const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
-    // const citrus = fruits.slice(2 , 4);
-    // console.log(citrus) ; // (2) ['Lemon', 'Apple']
+    const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+    const citrus = fruits.slice(2 , 4); //Start(inclusive)  , End(Exclusive)
+    console.log(citrus) ; // (2) ['Lemon', 'Apple']
 
 //============================******============================****==========================================
     
-//=========== Sort  =====================//
+   =========== Sort  =====================
 
-    // const fruits = ["Banana", "Orange", "Apple", "Mango"];
-    // console.log(fruits.sort() );   //(4) ['Apple', 'Banana', 'Mango', 'Orange']
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    console.log(fruits.sort() );   //(4) ['Apple', 'Banana', 'Mango', 'Orange']
 
-    // const months = ["Jan", "Feb", "Mar", "Apr"];
-    // const sorted = months.toSorted();  || months.toReversed();
-    // console.log(sorted) ; //(4) ['Apr', 'Feb', 'Jan', 'Mar'] => Creat New Array 
+    const months = ["Jan", "Feb", "Mar", "Apr"];
+    const sorted = months.toSorted();  || months.toReversed();
+    console.log(sorted) ; //(4) ['Apr', 'Feb', 'Jan', 'Mar'] => Creat New Array 
 
-    // const arr = [1,4,3,7,2,6] ; 
-    // console.log(arr.sort()) ; 
-    // console.log(arr.reverse()) ; 
-    //But
-    // const arr = [10 , 100 , 25 , 55] ; 
-    // console.log(arr.sort()) ; //(4) [10, 100, 25, 55] error .. beacuse it sort as string
-    // Here Come Numeric Sort : 
-    // const points = [40, 100, 1, 5, 25, 10];
-    // points.sort(function(a, b)
-    // {
-    //     return a - b ; || b - a for descending 
-    // });
-    // console.log(points) ; //(6) [1, 5, 10, 25, 40, 100]
+    const arr = [1,4,3,7,2,6] ; 
+    console.log(arr.sort()) ; 
+    console.log(arr.reverse()) ; 
+    ***But***
+    const arr = [10 , 100 , 25 , 55] ; 
+    console.log(arr.sort()) ; //(4) [10, 100, 25, 55] error .. beacuse it sort as string
+    =>Here Come Numeric Sort : 
+    const points = [40, 100, 1, 5, 25, 10];
+    points.sort(function(a, b)
+    {
+        return a - b ; || b - a for descending 
+    });
+    console.log(points) ; //(6) [1, 5, 10, 25, 40, 100]
 
     //Sorting an Array in Random Order
-    // const points = [40, 100, 1, 5, 25, 10];
-    // points.sort(function(){return 0.5 - Math.random()});
+    const points = [40, 100, 1, 5, 25, 10];
+    points.sort(function(){return 0.5 - Math.random()});
 
 //============================******============================****==========================================
-    //=========== Array Search  =====================//
+    =========== Array Search  =====================
 
-    // const color = ['red' , 'blue' , "green"] ; 
-    // console.log(color.indexOf("red")) ; // 0  ; 
-    //array.indexOf(item, start)  ; 
-    //fruits.lastIndexOf(item , start) ;
-    //fruits.includes("Mango"); // false 
+    // pos -> indexOf , lastIndexOf , bool -> include
+    const color = ['red' , 'blue' , "green"] ; 
+    console.log(color.indexOf("red")) ; // 0  ; 
+    array.indexOf(item, start)  ; 
+    fruits.lastIndexOf(item , start) ;
+    fruits.includes("Mango"); // false 
+    // UpperBound -> find function
+    const numbers = [4, 9, 16, 25, 29];
+    let first = numbers.find(myFunction);
+    function myFunction(value, index, array) 
+    {
+     return value > 18;
+    }   // First element Over 18 
+    //UpperBound Index ->findIndex Function
+    const numbers = [4, 9, 16, 25, 29];
+    let first = numbers.findIndex(myFunction);
 
-    // const numbers = [4, 9, 16, 25, 29];
-    // let first = numbers.find(myFunction);
-    // function myFunction(value, index, array) 
-    // {
-    //  return value > 18;
-    // }   // First element Over 18 
+    function myFunction(value, index, array) {
+    return value > 18;
+    }   // Return Index over 18 
 
-    // const numbers = [4, 9, 16, 25, 29];
-    // let first = numbers.findIndex(myFunction);
-
-    // function myFunction(value, index, array) {
-    // return value > 18;
-    // }   // Return Index over 18  
-
-    // const temp = [27, 28, 30, 40, 42, 35, 30];
-    // let high = temp.findLast(x => x > 40); //42
-    // const temp = [27, 28, 30, 40, 42, 35, 30];
-    // let pos = temp.findLastIndex(x => x > 40);
+    // Easy Syntex
+    const temp = [27, 28, 30, 40, 42, 35, 30];
+    let high = temp.findLast(x => x > 40); //42
+    const temp = [27, 28, 30, 40, 42, 35, 30];
+    let pos = temp.findLastIndex(x => x > 40);
 
     //============================******============================****==========================================
-    //=========== Array Iteration  =====================//
+    =========== Array Iteration  =====================
 
-        //01
+    00 -> For Of \ For In
+    let arr = [10, 20, 30];
+    for (let val of arr) {
+    console.log(val); // 10, 20, 30
+    }
+    let arr = [10, 20, 30];
+    for (let i in arr) {
+    console.log(i);       // 0, 1, 2
+    console.log(arr[i]);  // 10, 20, 30
+    }
 
-    //const numbers = [45, 4, 9, 16, 25];
-    // numbers.forEach(myFunction);
-    // function myFunction(value, index, array) 
-    // {
-    // console.log(value) ; 
-    // console.log(index) ; 
-    // }
+    01 -> forEach
 
-        //02
+    const numbers = [45, 4, 9, 16, 25];
+    numbers.forEach(myFunction);
+    function myFunction(value, index, array) 
+    {
+    console.log(value) ; 
+    console.log(index) ; 
+    }
 
-    // const numbers1 = [45, 4, 9, 16, 25];
-    // const numbers2 = numbers1.map(myFunction);
-    // function myFunction(value, index, array) 
-    //{
-    // return value ;
-    // }
-    // console.log(numbers2) ; // (5) [45, 4, 9, 16, 25]
+    02 -> Map
 
-        //03
-    // const numbers = [45, 4, 9, 16, 25];
-    // const over18 = numbers.filter(myFunction);
+    const numbers1 = [45, 4, 9, 16, 25];
+    const numbers2 = numbers1.map(myFunction);
+    function myFunction(value, index, array) 
+    {
+    return value ;
+    }
+    console.log(numbers2) ; // (5) [45, 4, 9, 16, 25]
 
-    // function myFunction(value, index, array) 
-    // {
-    //  return value > 18;
-    // } 
-    // console.log(over18) // (2) [45, 25]
+    03 -> Filter (conditional)
 
-        //04
-    // const numbers = [45, 4, 9, 16, 25];
-    // let sum = numbers.reduce(myFunction);   || numbers.reduce(myFunction, 100); If we want start 100
-    // function myFunction(total, value, index, array)
-    // {
-    //    return total + value; // like prefix sum
-    // }   console.log(sum) ; // 99 
+    const numbers = [45, 4, 9, 16, 25];
+    const over18 = numbers.filter(myFunction);
 
-    // const numbers = [45, 4, 9, 16, 25];
-    // let sum = numbers.reduceRight(myFunction); \\ sum right to left
-    // function myFunction(total, value, index, array) {
-    // return total + value;
-    // }
+    function myFunction(value, index, array) 
+    {
+     return value > 18;
+    } 
+    console.log(over18) // (2) [45, 25]
 
-    //05
-    // every() method checks if all array values pass a test.
-    // const numbers = [45, 4, 9, 16, 25];
-    // let allOver18 = numbers.every(myFunction);
+    04 -> Prefix Sum 
 
-    // function myFunction(value, index, array) {
-    // return value > 18;
-    // }
+    const numbers = [45, 4, 9, 16, 25];
+    let sum = numbers.reduce(myFunction);   || numbers.reduce(myFunction, 100); If we want start 100
+    function myFunction(total, value, index, array)
+    {
+       return total + value; // like prefix sum
+    }   console.log(sum) ; // 99 
+    // sum right to left
+    const numbers = [45, 4, 9, 16, 25];
+    let sum = numbers.reduceRight(myFunction); 
+    function myFunction(total, value, index, array) {
+    return total + value;
+    }
 
-    
+    05 -> Every (Conditional )
+    every() method checks if all array values pass a test.
+    const numbers = [45, 4, 9, 16, 25];
+    let allOver18 = numbers.every(myFunction);
 
+    function myFunction(value, index, array) {
+    return value > 18;
+    }
+
+// =================================== //=========================================// ==============================================
+*** Array Practice ***
+
+Create an array called colors with these elements: "red", "green", "blue", "yellow".
+Add "purple" at the end of the array.
+Remove the first color And Print 
+Insert "orange" and "pink" starting at index 2 without removing any elements.
+creat new Colors array with 3 consecutive portion 
+Sort the array alphabetically.
+Print the array after each step.
 
 </script>
 </html>

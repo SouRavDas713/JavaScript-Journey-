@@ -11,6 +11,7 @@
     Topic 03 : Array Search <br>
     Topic 04 : Array Sort <br>
     Topic 05 : Array Iterator <br>
+    Topic 06 : Array Practice <br>
 
 <b> Day 03 </b> <br>
     Topic 01 : Number System <br>
