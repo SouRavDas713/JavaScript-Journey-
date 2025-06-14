@@ -17,7 +17,7 @@
   <li>📌 <b>Topic 03:</b> <span style="color:#20B2AA;">Array Search</span></li>
   <li>📌 <b>Topic 04:</b> <span style="color:#20B2AA;">Array Sort</span></li>
   <li>📌 <b>Topic 05:</b> <span style="color:#20B2AA;">Array Iterator</span></li>
-  <li>📌 <b>Topic 06:</b> <span style="color:#20B2AA;">Array Practice</span></li>
+  <li>📌 <b>Topic 06:</b> <span style="color:#20B2AA;">Array Practice [ Easy To Hard ] </span></li>
 </ul>
 
 <h2 style="color:#6A5ACD;">✨ <b>Day 03</b></h2>

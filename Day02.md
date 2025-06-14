@@ -8,8 +8,8 @@
 <body>
     
 </body>
-    <!-- You should use objects when you want the element names to be strings (text).
-    You should use arrays when you want the element names to be numbers. -->
+     You should use objects when you want the element names to be strings (text).
+    You should use arrays when you want the element names to be numbers. 
 <script>
 
     //=========== Syntext =====================//
@@ -385,7 +385,7 @@
      Double every number using .map(). Print.
      Reverse the array. Print.
      Sort it in ascending and descending order. Print.
-     
+
     *** Mid : 
 
     Find the sum of the array using .reduce().
