@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-     You should use objects when you want the element names to be strings (text).
+
+
+    You should use objects when you want the element names to be strings (text).
     You should use arrays when you want the element names to be numbers. 
-<script>
+
 
     //=========== Syntext =====================//
 
@@ -21,9 +13,11 @@
     console.log(arr) ; 
     console.log(arr.length) ; 
     console.log(arr.sort()) ; //['four', 'one', 'three', 'two']
+
     
     => Copy Array 
     const newArr = [...oldArr]; // not newArr = oldArr
+
 
     =>  Destructuring Arrays
     const [a, b] = [10, 20];  // a = 10, b = 20
@@ -31,6 +25,8 @@
 
 
     //=========== Loop Over Array  =====================//
+
+
 
     const color  = [ "red" , "green" , "yellow" , "blue"] ; 
     let text = "Array Colors Are :\n" ; 
@@ -49,7 +45,10 @@
     black
     console.log(Array.isArray(color)) ; //true 
 
+
      //=========== For Each Over Array  =====================//
+
+
 
     const arr = ["a" , "b" , "c"] ; 
 
@@ -60,7 +59,9 @@
         console.log(value) ; 
     }
 
+
      //=========== Nested Loop Over Array  =====================//
+
 
     const id = [
     ["CSE" , "BBA"] , 
@@ -77,7 +78,10 @@
 
 //============================******============================****==========================================
 
+
     =========== Array Method  =====================
+
+
 
     01 -> tostring
 
@@ -85,17 +89,20 @@
     let myList = fruits.toString();
     console.log(myList) ; // Banana,Orange,Apple,Mango
 
+
     02 -> length
 
     const fruits = ["Banana", "Orange", "Apple", "Mango"];
     fruits.length = 2;
     console.log(fruits) ; //(2) ['Banana', 'Orange']
 
+
     03 -> join
 
     const fruits = ["Banana", "Orange", "Apple", "Mango"];
     let text =  fruits.join(" and ")
-     console.log(text) ; Banana and Orange and Apple and Mango
+    console.log(text) ; Banana and Orange and Apple and Mango
+
 
     04 -> POP | PUSH 
 
@@ -103,6 +110,7 @@
     fruits.pop();
     fruits.push("Guava") ; 
     console.log(fruits) ; // (4) ['Banana', 'Orange', 'Apple', 'Guava']
+
 
     05 -> shift | unshift 
 
@@ -113,6 +121,7 @@
      console.log(fruits) ; // (3) ['Orange', 'Apple', 'Mango']
      fruits.unshift("Banana") ; 
      console.log(fruits) ; // (4) ['Banana', 'Orange', 'Apple', 'Mango']
+
 
     06 -> Concat 
 
@@ -129,6 +138,7 @@
     const myArray = ["Emil", "Tobias", "Linus"];
     const myChildren = myArray.concat("Peter");  // Emil,Tobias,Linus,Peter
 
+
     07 -> splice
     The splice() method adds new items to an array.
 
@@ -144,6 +154,7 @@
     console.log(fruits) ; // (3) ['Orange', 'Apple', 'Mango']
 
 
+
     08 -> slice
     The slice() method slices out a piece of an array.
 
@@ -155,12 +166,14 @@
     
    =========== Sort  =====================
 
+
     const fruits = ["Banana", "Orange", "Apple", "Mango"];
     console.log(fruits.sort() );   //(4) ['Apple', 'Banana', 'Mango', 'Orange']
 
     const months = ["Jan", "Feb", "Mar", "Apr"];
     const sorted = months.toSorted();  || months.toReversed();
     console.log(sorted) ; //(4) ['Apr', 'Feb', 'Jan', 'Mar'] => Creat New Array 
+
 
     const arr = [1,4,3,7,2,6] ; 
     console.log(arr.sort()) ; 
@@ -176,19 +189,23 @@
     });
     console.log(points) ; //(6) [1, 5, 10, 25, 40, 100]
 
+
     //Sorting an Array in Random Order
     const points = [40, 100, 1, 5, 25, 10];
     points.sort(function(){return 0.5 - Math.random()});
 
 //============================******============================****==========================================
-    =========== Array Search  =====================
+    =========== Array Search  ================
+    =====
 
     // pos -> indexOf , lastIndexOf , bool -> include
+
     const color = ['red' , 'blue' , "green"] ; 
     console.log(color.indexOf("red")) ; // 0  ; 
     array.indexOf(item, start)  ; 
     fruits.lastIndexOf(item , start) ;
     fruits.includes("Mango"); // false 
+
     // UpperBound -> find function
     const numbers = [4, 9, 16, 25, 29];
     let first = numbers.find(myFunction);
@@ -196,13 +213,17 @@
     {
      return value > 18;
     }   // First element Over 18 
+
+
     //UpperBound Index ->findIndex Function
+
     const numbers = [4, 9, 16, 25, 29];
     let first = numbers.findIndex(myFunction);
 
     function myFunction(value, index, array) {
     return value > 18;
     }   // Return Index over 18 
+
 
     // Easy Syntex
     const temp = [27, 28, 30, 40, 42, 35, 30];
@@ -284,6 +305,7 @@
 
     
     *** Easy : 
+
     Create an array called colors with these elements: "red", "green", "blue", "yellow".
     Add "purple" at the end of the array.
     Remove the first color And Print 
@@ -291,11 +313,15 @@
     creat new Colors array with 3 consecutive portion 
     Sort the array alphabetically.
     Print the array after each step. 
+
     *** Mid : 
+
     Find the index of "pink" and remove it from the array.
     Add "violet" right after "orange".
     Create a new array warmColors containing only colors that come before "red" alphabetically
+
     *** Hard : 
+
     01 Remove every color whose name length is less than 5 characters.
     02 Find all colors whose names contain the letter "o" and move them to the front of the array in the same order they appear.
     03 Replace the last 3 elements of the original array with the first 3 elements of another color  If specialColors has less than 3 elements, replace as many as possible.
@@ -307,18 +333,23 @@
      color.unshift("golden") ; 
      console.log(color)
     // (6) ['golden', 'red', 'green', 'blue', 'yellow', 'purple']
+
      let first = color.shift() ; 
      let last = color.pop() ; 
      color.sort() ; 
      console.log(first , last , color ) ; 
     // golden purple => (4) (4) ['blue', 'green', 'red', 'yellow']
+
     color.splice(2 , 0 , "orange" , "pink") ; 
     console.log(color) ; 
     // (6) ['blue', 'green', 'orange', 'pink', 'red', 'yellow']
+
     const threeColor = color.slice(2,5) ; 
     console.log(threeColor) ; 
     // (3) ['orange', 'pink', 'red'] 
+
     // ======================
+
     // *** Mid : 
     //
     let indexofPink = color.indexOf("pink") ; 
@@ -329,6 +360,7 @@
     color.splice(indexofOrange+1 , 0 , "violet") ; 
     console.log(color) ; 
     // (6) ['blue', 'green', 'orange', 'violet', 'red', 'yellow']
+
 
     // Many Way : 
     const redIndex = color.indexOf("red");
@@ -341,8 +373,10 @@
     }
     console.log(warmColors) ;
 
+
     // ======================
     // *** Hard : 
+
      const color = ['blue', 'green', 'orange', 'violet', 'red', 'yellow'] ; 
     for(let x in color)
     {
@@ -376,7 +410,9 @@
 
 
     // ================================================
+    
     *** Array Practice ***  Number Type 
+
 
     *** Easy : 
 
