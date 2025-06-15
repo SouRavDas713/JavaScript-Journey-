@@ -559,8 +559,3 @@
     }
     const longestInc = arr.slice(bestStart, bestStart + maxLen);
     console.log("Longest Increasing Subarray:", longestInc);
-
-
-
-</script>
-</html>

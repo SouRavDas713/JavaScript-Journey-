@@ -8,6 +8,7 @@
   <li>📌 <b>Topic 02:</b> <span style="color:#2E8B57;">String Method</span></li>
   <li>📌 <b>Topic 03:</b> <span style="color:#2E8B57;">String Search</span></li>
   <li>📌 <b>Topic 04:</b> <span style="color:#2E8B57;">String Template</span></li>
+  <li>📌 <b>Topic 04:</b> <span style="color:#2E8B57;">String Problem Solve [ Easy To Hard ]</span></li>
 </ul>
 
 <h2 style="color:#6A5ACD;">✨ <b>Day 02</b></h2>
