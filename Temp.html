@@ -6,13 +6,24 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <a href="https://www.google.com">Google</a>
 </body>
+
 <script>
+    function goBack() {
+      window.history.back();
+    }
 
-   
+    function goForward() {
+      window.history.forward();
+    }
 
+    function goSteps(n) {
+      window.history.go(n); // use negative for back, positive for forward
+    }
 
-
+    function showHistoryLength() {
+      alert("Number of pages in history: " + window.history.length);
+    }
 </script>
 </html>

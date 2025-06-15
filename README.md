@@ -44,5 +44,11 @@
   <li>📌 <b>Topic 02:</b> <span style="color:#4682B4;">(Coming Soon...)</span></li>
 </ul>
 
+<h2 style="color:#6A5ACD;">✨ <b>Day 06</b></h2>
+<ul>
+  <li>📌 <b>Topic 01:</b> <span style="color:#4682B4;">API</span></li>
+  <li>📌 <b>Topic 02:</b> <span style="color:#4682B4;">(Coming Soon...)</span></li>
+</ul>
+
 <hr>
 <p style="font-style: italic; color: gray;">🛠️ Made with 💛 while learning JavaScript — Sourav Das</p>
