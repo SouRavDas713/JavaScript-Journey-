@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(134, 199, 249);
+    }
+
+</style>
+<body>
+    <div class="main-content">
+        <div class="user">
+            <input type="number" id="one" placeholder="First Number">
+            <select id ="op" >
+                <option value="+"> + </option>
+                <option value="-"> - </option>
+                <option value="*"> * </option>
+                <option value="/"> / </option>
+                <option value="%"> % </option>
+            </select>
+            <input type="number" id="two" placeholder="Second Number">
+        </div>
+        <div class="done">
+            <button onclick="calculate()">Calculate</button>
+        </div>
+        <div class="output">
+            <p>The Result is 00</p>
+        </div>
+    </div>
+</body>
+<script>
+    function calculate()
+    {
+
+    const firstNumber = Number(document.getElementById('one').value) ;
+    const secondNumber = Number(document.getElementById('two').value) ; 
+    const op = document.getElementById("op").value;
+    
+    let result = 0 ; 
+    switch(op)
+    {
+        case "+" : result = firstNumber + secondNumber ; break ; 
+        case "-" : result = firstNumber - secondNumber ; break ; 
+        case "*" : result = firstNumber * secondNumber ; break ; 
+        case "/" : result = firstNumber / secondNumber ; break ; 
+        case "%" : result = firstNumber % secondNumber ; break ; 
+    }
+        document.getElementsByTagName('p')[0].textContent = `The Result is ${result} ... Thanks ` ; 
+    }
+
+</script>
+</html>
