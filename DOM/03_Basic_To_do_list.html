@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To-Do App</title>
+  <style>
+    body {
+      background-color: aquamarine;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    input[type="text"] {
+      width: 500px;
+      padding: 8px;
+      font-size: 16px;
+    }
+
+    .add-task {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      width: 60%;
+      background-color: rgb(156, 186, 255);
+      padding: 20px;
+    }
+
+    .dashboard {
+      width: 80%;
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      gap: 30px;
+    }
+
+    .done, .task {
+      flex: 1;
+      min-height: 100px;
+      background-color: #f3f3f3;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    .task-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #e0e0e0;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+
+    .task-item p {
+      margin: 0;
+      flex-grow: 1;
+      padding: 0 10px;
+      word-break: break-word;
+    }
+
+    .task-item input[type="checkbox"] {
+      transform: scale(1.3);
+    }
+
+    .task-item button {
+      margin-left: 10px;
+      padding: 5px 10px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="up">
+    <h1>To-Do App</h1>
+    <h3>Today Date: <span id="today-date"></span></h3>
+  </div>
+
+  <div class="add-task">
+    <p><b>Add Task</b></p>
+    <input type="text" id="task-input" placeholder="Write your task here..." />
+    <button id="add-btn">Add</button>
+  </div>
+
+  <div class="dashboard">
+    <div class="task">
+      <h3>TASK :</h3>
+      <div id="task-list"></div>
+    </div>
+    <div class="done">
+      <h3>DONE :</h3>
+      <div id="done-list"></div>
+    </div>
+  </div>
+
+  <script>
+    // Show today’s date
+    document.getElementById("today-date").textContent = new Date().toDateString();
+
+    const addBtn = document.getElementById("add-btn");
+    const taskInput = document.getElementById("task-input");
+    const taskList = document.getElementById("task-list");
+    const doneList = document.getElementById("done-list");
+
+    // Utility: Create task item
+    function createTaskElement(text) {
+      const taskItem = document.createElement("div");
+      taskItem.className = "task-item";
+
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+
+      const taskText = document.createElement("p");
+      taskText.textContent = text;
+
+      const deleteBtn = document.createElement("button");
+      deleteBtn.textContent = "Delete";
+
+      taskItem.appendChild(checkbox);
+      taskItem.appendChild(taskText);
+      taskItem.appendChild(deleteBtn);
+
+      // ✔️ Move to done list
+      checkbox.addEventListener("change", () => {
+        if (checkbox.checked) {
+          taskItem.removeChild(checkbox); // optional
+          doneList.appendChild(taskItem);
+        }
+      });
+
+      // ❌ Delete
+      deleteBtn.addEventListener("click", () => {
+        taskItem.remove();
+      });
+
+      return taskItem;
+    }
+
+    // Handle Add Button
+    addBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const text = taskInput.value.trim();
+      if (!text) {
+        alert("Please enter a task!");
+        return;
+      }
+
+      const newTask = createTaskElement(text);
+      taskList.appendChild(newTask);
+      taskInput.value = "";
+    });
+  </script>
+</body>
+</html>

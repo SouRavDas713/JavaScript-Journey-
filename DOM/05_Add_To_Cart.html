@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cart Project</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+    .input {
+      min-height: 500px;
+      width: 500px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      border: 2px solid black;
+      padding: 10px;
+    }
+    .output {
+      min-height: 500px;
+      width: 500px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      border: 2px solid black;
+      padding: 10px;
+    }
+    .fruit, .color {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .fruits-details, .color-details {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      align-items: center;
+    }
+    input[type="number"] {
+      width: 60px;
+    }
+    #fruit-list, #color-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    button {
+      background-color: aqua;
+      width: 150px;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+    }
+    .fruits-display, .color-display {
+      border: 2px solid black;
+      min-height: 200px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="input">
+    <p><strong>Add To Cart:</strong></p>
+    <p>Select --------- Product --------- Quantity</p>
+
+    <div class="fruit">
+      <span>Fruits:</span>
+      <form id="fruit-list">
+        <div class="fruits-details">
+          <input type="checkbox" name="fruit" value="Orange">
+          <span>Orange</span>
+          <input type="number" min="1" value="1">
+        </div>
+        <div class="fruits-details">
+          <input type="checkbox" name="fruit" value="Mango">
+          <span>Mango</span>
+          <input type="number" min="1" value="1">
+        </div>
+        <div class="fruits-details">
+          <input type="checkbox" name="fruit" value="Banana">
+          <span>Banana</span>
+          <input type="number" min="1" value="1">
+        </div>
+      </form>
+    </div>
+
+    <div class="color">
+      <span>Colors:</span>
+      <form id="color-list">
+        <div class="color-details">
+          <input type="checkbox" name="color" value="Red">
+          <span>Red</span>
+          <input type="number" min="1" value="1">
+        </div>
+        <div class="color-details">
+          <input type="checkbox" name="color" value="Blue">
+          <span>Blue</span>
+          <input type="number" min="1" value="1">
+        </div>
+        <div class="color-details">
+          <input type="checkbox" name="color" value="Green">
+          <span>Green</span>
+          <input type="number" min="1" value="1">
+        </div>
+      </form>
+    </div>
+
+    <button id="add-to-cart">Add</button>
+  </div>
+
+  <div class="output">
+    <div class="fruits-display"><strong>Fruits Selected:</strong><br></div>
+    <div class="color-display"><strong>Colors Selected:</strong><br></div>
+  </div>
+
+  <script>
+    const fruitForm = document.getElementById("fruit-list");
+    const colorForm = document.getElementById("color-list");
+    const submitCart = document.getElementById("add-to-cart");
+
+    const fruitOutput = document.querySelector(".fruits-display");
+    const colorOutput = document.querySelector(".color-display");
+
+    submitCart.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      // Clear previous output
+      fruitOutput.innerHTML = "<strong>Fruits Selected:</strong><br>";
+      colorOutput.innerHTML = "<strong>Colors Selected:</strong><br>";
+
+      // Fruits
+      const fruitRows = fruitForm.querySelectorAll(".fruits-details");
+      fruitRows.forEach(row => {
+        const checkbox = row.querySelector('input[type="checkbox"]');
+        const quantity = row.querySelector('input[type="number"]');
+        const name = row.querySelector("span").textContent;
+        if (checkbox.checked) {
+          fruitOutput.innerHTML += `${name} × ${quantity.value}<br>`;
+        }
+      });
+
+      // Colors
+      const colorRows = colorForm.querySelectorAll(".color-details");
+      colorRows.forEach(row => {
+        const checkbox = row.querySelector('input[type="checkbox"]');
+        const quantity = row.querySelector('input[type="number"]');
+        const name = row.querySelector("span").textContent;
+        if (checkbox.checked) {
+          colorOutput.innerHTML += `${name} × ${quantity.value}<br>`;
+        }
+      });
+      
+    });
+  </script>
+</body>
+</html>

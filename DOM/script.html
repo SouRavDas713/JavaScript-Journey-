@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Checkbox Selection</title>
+</head>
+<body>
+  <h3>Select Items:</h3>
+  <form id="item-form">
+    <label><input type="checkbox" name="item" value="x"> x</label><br>
+    <label><input type="checkbox" name="item" value="2"> 2</label><br>
+    <label><input type="checkbox" name="item" value="y"> y</label><br>
+    <label><input type="checkbox" name="item" value="3"> 3</label><br>
+    <label><input type="checkbox" name="item" value="g"> g</label><br>
+    <label><input type="checkbox" name="item" value="4"> 4</label><br>
+    <label><input type="checkbox" name="item" value="r"> r</label><br>
+    <button type="submit">Submit</button>
+  </form>
+
+  <h3>Selected Items:</h3>
+  <div id="result"></div>
+
+  <script>
+    const form = document.getElementById('item-form');
+    const result = document.getElementById('result');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const checkboxes = form.querySelectorAll('input[name="item"]:checked');
+      const checkedItems = Array.from(checkboxes).map(cb => cb.value);
+
+      if (checkedItems.length > 0) {
+        result.textContent = 'You selected: ' + checkedItems.join(', ');
+      } else {
+        result.textContent = 'No items selected.';
+      }
+
+      form.reset(); // Clear checkboxes after submit
+    });
+  </script>
+</body>
+</html>
