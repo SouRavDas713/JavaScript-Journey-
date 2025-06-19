@@ -109,3 +109,25 @@ const form = document.forms['frm1'] ;
     }
     document.getElementById('out').textContent = `Your Name is ${name} and Your Age is ${age}` ;
  }) ;
+
+ 
+==================================================================================
+
+Animation : www.w3schools.com/js/tryit.asp?filename=tryjs_dom_animate_3 
+
+ 
+==================================================================================
+EVENT : 
+
+<h2 onclick="this.innerHTML = 'Ooops!'">Click on this text!</h1>
+====
+
+document.getElementById("myBtn").onclick = displayDate;
+
+====
+    onclick="console.log('Clicked')" 
+    onmouseover="console.log('Mouse Over')" 
+    onmouseout="console.log('Mouse Out')" 
+    onmousedown="console.log('Mouse Down')" 
+    onmouseup="console.log('Mouse Up')"
+

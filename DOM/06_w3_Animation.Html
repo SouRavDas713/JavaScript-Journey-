@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        background-color: yellow;
+        height: 400px;
+        width: 400px;
+        border: 3px solid black;
+    }
+    .box{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: red;
+        height: 40px;
+        width: 40px;
+        position: relative;
+        border: 1px solid black;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="box">Hi</div>
+    </div><br>
+    <button onclick="myMove()">Move</button>
+</body>
+<script>
+    function myMove() {
+        const myBox = document.querySelector(".box") ; 
+        let pos =  0 ; 
+        const interval = setInterval(Move , 1) ; 
+        function Move()
+        {
+            if(pos<360)
+            {
+                pos++ ; 
+                myBox.style.top = pos+'px' ;
+                myBox.style.left = pos+'px' ;  
+            }
+            else clearInterval(interval) ; 
+        }
+    }
+     
+</script>
+</html>
