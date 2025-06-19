@@ -95,7 +95,7 @@ const form = document.forms['frm1'] ;
  form.addEventListener("submit" , function (e){
   e.preventDefault() ; 
  
-    const name = form.elements['name'].value ; 
+    const name = form.elements['name'].value ;  // Or form['name].value
     const age = form.elements['age'].value ; 
 
     if(name!=name.toUpperCase())
