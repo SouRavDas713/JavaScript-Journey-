@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Database</title>
+</head>
+<style>
+    body{
+        background-color: aquamarine;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+    }
+    .input{
+        background-color: rgb(231, 255, 54);
+        height: 200px;
+        width: 400px;
+        border: 2px solid black ; 
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+    }
+    input{
+        margin-bottom: 10px ;
+    }
+
+    .heading{
+        height: auto;
+        width: 100%;
+        border: 2px solid blue;
+        background-color: bisque;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .output{
+        background-color: rgb(255, 255, 255);
+        height: auto ; 
+        min-height: 300px;
+        width: 100%;
+        border: 2px solid black ; 
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+    }
+    .newStudentRow{
+        height: 50px;
+        width:90%;
+        margin: 5px;
+        border: 2px solid black;
+        background-color: aqua;
+        display: flex;
+        flex-direction: row ;
+        gap: 20px;
+        align-items: center;
+        justify-content:space-evenly;
+    }
+    .st-name , .st-age , .st-id{
+        padding: 8px;
+        background-color: aliceblue;
+        border: 1px solid black;
+    }
+    #deletebtn{
+        height: auto;
+        width: auto;
+        padding: 10px;
+        font-weight: bold;
+        color: brown;
+    }
+</style>
+<body>
+    <!--  -->
+    <div class="input">
+        <form id="frm1">
+            <label for="name">Your Name : </label> 
+            <input type="text" name="name" placeholder="UPPERCASE"><br>
+             <label for="id">Your ID : </label> 
+            <input type="text" name="id" placeholder="Start With C"><br>
+             <label for="age">Your Age : </label> 
+            <input type="number" name="age" placeholder="As Document"><br>
+            <input type="submit">
+        </form>
+    </div>
+    <!--  -->
+    <div class="heading">
+        <h2>Student Database</h1>
+    </div>
+    <!--  -->
+    <div class="output">
+
+    </div>
+
+</body>
+<script>
+     
+
+    function addStudentDatabse(name , id , age)
+    {
+        const newStudentDetails = document.querySelector(".output") ; 
+        const newStudent = document.createElement("div") ; 
+        newStudent.className = "newStudentRow" ; 
+
+        const newStudentName = document.createElement("div") ; 
+        newStudentName.className = "st-name" ; 
+        newStudentName.textContent = ` NAME : ${name} ` ; 
+
+        const newStudentid = document.createElement("div") ; 
+        newStudentid.className = "st-id" ;
+        newStudentid.textContent = ` ID : ${id}` ;
+
+        const newStudentAge = document.createElement("div") ; 
+        newStudentAge.className = "st-age" ;
+        newStudentAge.textContent = ` AGE : ${age}` ;
+
+        const dbtn = document.createElement("button") ; 
+        dbtn.id = "deletebtn" ; 
+        dbtn.textContent = "Delete" ; 
+
+        newStudent.appendChild(newStudentName) ; 
+        newStudent.appendChild(newStudentid) ; 
+        newStudent.appendChild(newStudentAge) ; 
+        newStudent.appendChild(dbtn) ; 
+
+        newStudentDetails.appendChild(newStudent) ; 
+
+        dbtn.addEventListener("click" , function()
+        {
+            newStudentDetails.removeChild(newStudent)  ; 
+        }); 
+        
+    }
+    document.getElementById("frm1").addEventListener("submit" , function (e) {
+        e.preventDefault() ; 
+
+        const form = document.forms['frm1'] ; 
+        const studentName = form.name.value  ; 
+        const studentId = form.id.value  ; 
+        const studentAge = form.age.value  ;
+
+        if(!studentName || !studentAge || !studentId)
+        {
+            alert("fill Up Form") ; 
+            return ; 
+        }
+        else
+        {
+            addStudentDatabse(studentName , studentId , studentAge) ; 
+        }
+        form.reset() ; 
+    })
+</script>
+</html>
