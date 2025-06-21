@@ -77,7 +77,8 @@ text+=form.elements[i].value+" " ;
 }
 document.getElementById('output').textContent = text ;
 
-==================================================================================
+==========================================================================
+
 Basic Form Validation : 
 
     <p>Name Must Be UpperCase And Age Must Be 18+</p>

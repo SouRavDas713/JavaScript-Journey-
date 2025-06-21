@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Note Taking App</title>
+  <style>
+    body {
+      background-color: aquamarine;
+      font-family: Arial, sans-serif;
+    }
+
+    .note-input {
+      padding: 20px;
+      margin: 20px auto;
+      display: flex;
+      flex-direction: column;
+      width: 40%;
+      gap: 10px;
+      border: 2px solid black;
+    }
+
+    .note-input input,
+    .note-input textarea {
+      padding: 8px;
+      font-size: 1rem;
+    }
+
+    .note-input button {
+      padding: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: black;
+      color: white;
+      border: none;
+    }
+
+    .note-output {
+      margin: 20px auto;
+      padding: 20px;
+      width: 90%;
+      height: auto;
+      min-height: 200px;
+      border: 2px solid black;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: flex-start;
+    }
+
+    .note-card {
+      background: white;
+      border: 1px solid gray;
+      padding: 10px;
+      width: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .note-title {
+      color: red;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .note-details {
+      color: black;
+      font-weight: 400;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="note-input">
+    <input type="text" id="note-title" placeholder="Note Title" />
+    <textarea id="note-details" rows="4" placeholder="Full Note"></textarea>
+    <button id="submit-btn">Add Note</button>
+  </div>
+
+  <div class="note-output" id="note-output">
+    <!-- Notes will appear here -->
+  </div>
+
+  <script>
+    const titleInput = document.getElementById("note-title");
+    const detailsInput = document.getElementById("note-details");
+    const submitBtn = document.getElementById("submit-btn");
+    const outputContainer = document.getElementById("note-output");
+
+    submitBtn.addEventListener("click", () => {
+      const title = titleInput.value.trim();
+      const details = detailsInput.value.trim();
+
+      if (!title || !details) {
+        alert("Please fill in both title and note.");
+        return;
+      }
+
+      // Create the card
+      const noteCard = document.createElement("div");
+      noteCard.className = "note-card";
+
+      const noteTitle = document.createElement("div");
+      noteTitle.className = "note-title";
+      noteTitle.textContent = title;
+
+      const noteDetails = document.createElement("div");
+      noteDetails.className = "note-details";
+      noteDetails.textContent = details;
+
+      noteCard.appendChild(noteTitle);
+      noteCard.appendChild(noteDetails);
+
+      outputContainer.appendChild(noteCard);
+
+      // Clear input
+      titleInput.value = "";
+      detailsInput.value = "";
+    });
+  </script>
+
+</body>
+</html>
